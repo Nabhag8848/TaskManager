@@ -1,0 +1,23 @@
+{
+  "name": "TaskManager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node mongodb.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nabhag8848/TaskManager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nabhag8848/TaskManager/issues"
+  },
+  "homepage": "https://github.com/Nabhag8848/TaskManager#readme",
+  "dependencies": {
+    "mongodb": "^4.3.1"
+  }
+}
