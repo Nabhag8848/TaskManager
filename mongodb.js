@@ -1,6 +1,11 @@
-const mongodb = require('mongodb')
-const MongoClient = mongodb.MongoClient
+const { MongoClient, ObjectId} = require('mongodb')
 
+const id = new ObjectId()
+console.log(id)
+console.log(id.toString())
+console.log(id.getTimestamp())
+console.log(id.toHexString().length)
+console.log(id.id.length)
 
 const connectionURL = 'mongodb://127.0.0.1:27017'
 const databaseName = 'task-manager'
@@ -13,8 +18,9 @@ MongoClient.connect(connectionURL, { useNewURLParser: true }, (error, client) =>
 
     const db = client.db(databaseName)
     db.collection('users').insertOne({
-        name:'Nabhag',
-        age:19
+        _id:id,
+        name:'Narhari',
+        age:22
     },(error,result)=>{
 
         if(error){
@@ -45,6 +51,5 @@ MongoClient.connect(connectionURL, { useNewURLParser: true }, (error, client) =>
 
         console.log(result.insertedCount)
     })
-    
 })
 
