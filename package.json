@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node mongodb.js"
+    "start": "node mongodb.js",
+    "dev": "nodemon mongodb.js"
   },
   "repository": {
     "type": "git",
