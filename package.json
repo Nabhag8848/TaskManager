@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node mongodb.js",
-    "dev": "nodemon mongodb.js"
+    "dev": "node src/db/mongoose.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Nabhag8848/TaskManager#readme",
   "dependencies": {
-    "mongodb": "^4.3.1"
+    "mongodb": "^4.3.1",
+    "mongoose": "^6.2.0"
   }
 }
