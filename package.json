@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node mongodb.js",
-    "dev": "node src/db/mongoose.js"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -19,8 +19,12 @@
   },
   "homepage": "https://github.com/Nabhag8848/TaskManager#readme",
   "dependencies": {
+    "express": "^4.17.2",
     "mongodb": "^4.3.1",
     "mongoose": "^6.2.0",
     "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
