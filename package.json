@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Nabhag8848/TaskManager#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "express": "^4.17.2",
     "mongodb": "^4.3.1",
     "mongoose": "^6.2.0",
