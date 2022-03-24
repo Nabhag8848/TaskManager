@@ -22,10 +22,22 @@ router.post('/tasks', auth, async (req,res) => {
 router.get('/tasks', auth, async (req,res) => {
 
     try{
-        const tasks = await Task.find({owner: req.user._id  })
+        
+        const filterBy = {
+            owner: req.user._id
+        }
+
+        if(req.query.completed){
+            filterBy.completed = req.query.completed === 'true'
+        }
+
+        const perPageResult = parseInt(req.query.limit)
+        const skipDocuments = parseInt(req.query.skip)
+
+        const tasks = await Task.find(filterBy,null,{limit: perPageResult, skip:skipDocuments})
         res.send(tasks)
     }catch (e){
-        res.send(500).send()
+        res.status(500).send()
     }
 })
 
