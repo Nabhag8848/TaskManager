@@ -34,7 +34,14 @@ router.get('/tasks', auth, async (req,res) => {
         const perPageResult = parseInt(req.query.limit)
         const skipDocuments = parseInt(req.query.skip)
 
-        const tasks = await Task.find(filterBy,null,{limit: perPageResult, skip:skipDocuments})
+        const sort = {}
+
+        if(req.query.sort){
+            const keyValue = req.query.sort.split('_')
+            sort[keyValue[0]] = keyValue[1] === 'desc' ? -1 : 1
+        }
+
+        const tasks = await Task.find(filterBy,null,{limit: perPageResult, skip:skipDocuments, sort})
         res.send(tasks)
     }catch (e){
         res.status(500).send()
